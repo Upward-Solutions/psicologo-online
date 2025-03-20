@@ -5,8 +5,14 @@
     display: flex; /* Usamos Flexbox para alinear los elementos */
     justify-content: space-between; /* Espaciado entre los elementos */
     align-items: center; /* Centra los elementos verticalmente */
+    width: 100%; /* Asegura que el NavBar ocupe todo el ancho de la pantalla */
+    position: fixed; /* Fija el NavBar en la parte superior */
+    top: 0; /* Asegura que esté en la parte superior */
+    left: 0; /* Asegura que se alinee a la izquierda */
+    z-index: 1000; /* Asegura que el NavBar esté por encima de otros elementos */
   }
   
+  /* Estilos de los enlaces dentro del NavBar */
   .navbar a {
     color: #fff; /* Color de los enlaces en blanco */
     text-decoration: none; /* Eliminar el subrayado */
@@ -17,3 +23,9 @@
   .navbar a:hover {
     color: #ff6347; /* Color de los enlaces al pasar el ratón (tomate) */
   }
+  
+  /* Ajustar el contenido de la página para que no quede oculto por el NavBar fijo */
+  body {
+    margin-top: 60px; /* Ajusta este valor según la altura de tu NavBar */
+  }
+  
