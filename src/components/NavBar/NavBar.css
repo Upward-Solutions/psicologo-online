@@ -1,0 +1,19 @@
+/* Estilos del NavBar */
+.navbar {
+    background-color: #000; /* Fondo negro */
+    padding: 10px 20px; /* Espaciado */
+    display: flex; /* Usamos Flexbox para alinear los elementos */
+    justify-content: space-between; /* Espaciado entre los elementos */
+    align-items: center; /* Centra los elementos verticalmente */
+  }
+  
+  .navbar a {
+    color: #fff; /* Color de los enlaces en blanco */
+    text-decoration: none; /* Eliminar el subrayado */
+    margin: 0 10px; /* Espaciado entre los enlaces */
+    font-size: 16px; /* Tamaño de la fuente */
+  }
+  
+  .navbar a:hover {
+    color: #ff6347; /* Color de los enlaces al pasar el ratón (tomate) */
+  }
