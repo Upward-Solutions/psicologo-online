@@ -1,0 +1,187 @@
+/* Variables de color */
+:root {
+    --color1: #060610;
+    --color2: #0f2e46;
+    --color3: #1d648b;
+    --color4: #2b9dc8;
+    --color5: #2bc9c8;
+}
+
+/* Estilos generales */
+body {
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+}
+
+/* Estilos del navbar */
+nav {
+    background-color: var(--color4);
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 20px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--color2);
+}
+
+/* Estilos del carrusel */
+.carrousel {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Contenedor de slides */
+.slides {
+    display: flex;
+    width: 200%;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Cada slide */
+.slide {
+    min-width: 100%;
+    height: 600px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Botones de navegación */
+button.prev, button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 24px;
+    transition: 0.3s;
+}
+
+button.prev { left: 10px; }
+button.next { right: 10px; }
+
+button.prev:hover, button.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Estilos de los textos */
+.slide h1 {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    font-family: 'Lora', serif;
+}
+
+.slide p {
+    font-size: 18px;
+    font-weight: 400;
+    font-family: 'Lora', serif;
+}
+
+.Nosotros {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    background-color: #f9f9f9;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 1200px;
+  }
+  
+  .image-container {
+    flex: 1;
+    padding-right: 20px;
+    display: flex;
+    justify-content: center; /* Centra la imagen dentro del contenedor */
+  }
+  
+  .image {
+    width: 500px; /* Establece un ancho fijo */
+    height: 400px; /* Establece una altura fija */
+    object-fit: cover; /* Mantiene la imagen proporcional y la recorta si es necesario */
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .text-container {
+    flex: 1;
+    text-align: left;
+  }
+  
+  .title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: 700;
+  }
+  
+  .text {
+    font-family: 'Lora', serif;
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 20px;
+  }
+  
+  .text strong {
+    font-weight: 600;
+    color: #007BFF;
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .image-container {
+      padding-right: 0;
+      margin-bottom: 20px;
+    }
+  
+    .image {
+      max-width: 100%;
+      height: auto;
+    }
+  
+    .title {
+      font-size: 2rem;
+    }
+  
+    .text {
+      font-size: 1rem;
+    }
+  }
+  
+
