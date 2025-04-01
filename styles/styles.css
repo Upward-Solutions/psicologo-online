@@ -1,187 +1,405 @@
 /* Variables de color */
 :root {
-    --color1: #060610;
-    --color2: #0f2e46;
-    --color3: #1d648b;
-    --color4: #2b9dc8;
-    --color5: #2bc9c8;
+  --color1: #060610;
+  --color2: #0f2e46;
+  --color3: #1d648b;
+  --color4: #2b9dc8;
+  --color5: #2bc9c8;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 /* Estilos generales */
 body {
-    margin: 0;
-    font-family: 'Raleway', sans-serif;
+  margin: 0;
+  font-family: "Raleway", sans-serif;
 }
 
 /* Estilos del navbar */
 nav {
-    background-color: var(--color4);
-    padding: 25px;
-    display: flex;
-    justify-content: center;
+  background-color: var(--color4);
+  padding: 25px;
+  display: flex;
+  justify-content: center;
 }
 
 nav a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    padding: 10px 20px;
-    transition: 0.3s;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px 20px;
+  position: relative;
+  transition: color 0.3s;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color2);
+  transition: width 0.3s ease, left 0.3s ease;
 }
 
 nav a:hover {
-    color: var(--color2);
+  color: var(--color2);
+}
+
+nav a:hover::after {
+  width: 100%;
+  left: 0;
 }
 
 /* Estilos del carrusel */
 .carrousel {
-    position: relative;
-    width: 100%;
-    height: 600px;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  position: relative;
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Contenedor de slides */
 .slides {
-    display: flex;
-    width: 200%;
-    transition: transform 0.5s ease-in-out;
+  display: flex;
+  width: 200%;
+  transition: transform 0.5s ease-in-out;
 }
 
 /* Cada slide */
 .slide {
-    min-width: 100%;
-    height: 600px;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-align: center;
-    padding: 20px;
+  min-width: 100%;
+  height: 600px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  padding: 20px;
 }
 
 /* Botones de navegación */
-button.prev, button.next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 24px;
-    transition: 0.3s;
+button.prev,
+button.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 24px;
+  transition: 0.3s;
 }
 
-button.prev { left: 10px; }
-button.next { right: 10px; }
+button.prev {
+  left: 10px;
+}
+button.next {
+  right: 10px;
+}
 
-button.prev:hover, button.next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+button.prev:hover,
+button.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 /* Estilos de los textos */
 .slide h1 {
-    font-size: 32px;
-    font-weight: 600;
-    margin-bottom: 10px;
-    font-family: 'Lora', serif;
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  font-family: "Lora", serif;
 }
 
 .slide p {
-    font-size: 18px;
-    font-weight: 400;
-    font-family: 'Lora', serif;
+  font-size: 18px;
+  font-weight: 400;
+  font-family: "Lora", serif;
 }
 
 .Nosotros {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 50px;
-    background-color: #f9f9f9;
+  text-align: right; /* Alinea el título a la derecha */
+  margin-bottom: 20px;
+}
+
+.Nosotros .title {
+  font-size: 32px;
+  font-weight: bold;
+  margin-right: 10%; /* Ajusta el margen derecho */
+}
+
+.Nosotros .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+}
+
+.image {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 10px;
+  height: 400px;
+  object-fit: cover;
+}
+
+.text-container {
+  text-align: justify;
+}
+
+/* Segunda fila con imagen a la izquierda */
+.row-reverse {
+  display: contents;
+}
+
+.row-reverse .image-container {
+  order: -1;
+}
+
+.Servicios {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #f8f8f8;
+}
+
+.title {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+/* Contenedor de las tarjetas */
+.cards-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* Estilo de las cards */
+.card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+  width: 200px;
+  height: 250px; /* Más alargadas */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Efecto hover */
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* Íconos */
+.card i {
+  font-size: 40px;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+/* Estilos Generales */
+.timeline-section {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #f8f8f8;
+}
+
+.title {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+/* Contenedor de la línea de tiempo */
+.timeline {
+  position: relative;
+  padding: 50px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Línea central */
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--color2); /* Cambia el color si quieres */
+  transform: translateX(-50%);
+}
+
+/* Ítems de la línea de tiempo */
+.timeline-item {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  width: 80%;
+  max-width: 400px;
+  background: white;
+  padding: 20px;
+  margin: 20px 0;
+  border-left: 4px solid var(--color2);
+  position: relative;
+  border-left: none; /* Quita la línea */
+}
+
+/* Puntos de la línea de tiempo */
+.timeline-dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 15px;
+  height: 15px;
+  background-color: #007bff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Contenido de cada ítem */
+.timeline-content {
+  background-color: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 200px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Alineación alternada */
+.timeline-content.left {
+  left: -220px;
+  text-align: right;
+}
+
+.timeline-content.right {
+  right: -220px;
+  text-align: left;
+}
+
+/* Animación cuando aparecen en pantalla */
+.timeline-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsivo para móviles */
+@media (max-width: 768px) {
+  .timeline::before {
+      left: 20px;
   }
-  
+
+  .timeline-dot {
+      left: 20px;
+  }
+
+  .timeline-content {
+      width: 80%;
+  }
+
+  .timeline-content.left, .timeline-content.right {
+      left: 40px;
+      right: auto;
+      text-align: left;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .cards-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 80%;
+    max-width: 300px;
+  }
+
+  /* Estilos generales */
+  .timeline-section {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f8f8f8;
+  }
+
+  .title {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
   .container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    width: 90%;
-    max-width: 1200px;
+    flex-direction: column;
+    text-align: center;
   }
-  
+
   .image-container {
-    flex: 1;
-    padding-right: 20px;
-    display: flex;
-    justify-content: center; /* Centra la imagen dentro del contenedor */
+    padding-right: 0;
+    margin-bottom: 20px;
   }
-  
+
   .image {
-    width: 500px; /* Establece un ancho fijo */
-    height: 400px; /* Establece una altura fija */
-    object-fit: cover; /* Mantiene la imagen proporcional y la recorta si es necesario */
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    height: auto;
   }
-  
-  .text-container {
-    flex: 1;
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .text {
+    font-size: 1rem;
+  }
+  .timeline::before {
+    left: 20px;
+  }
+
+  .timeline-content {
+    width: 80%;
+  }
+
+  .timeline-content.left,
+  .timeline-content.right {
+    left: 40px;
+    right: auto;
     text-align: left;
   }
-  
-  .title {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.5rem;
-    color: #333;
-    margin-bottom: 20px;
-    font-weight: 700;
-  }
-  
-  .text {
-    font-family: 'Lora', serif;
-    font-size: 1.1rem;
-    color: #555;
-    line-height: 1.8;
-    margin-bottom: 20px;
-  }
-  
-  .text strong {
-    font-weight: 600;
-    color: #007BFF;
-  }
-  
-  @media (max-width: 768px) {
-    .container {
-      flex-direction: column;
-      text-align: center;
-    }
-  
-    .image-container {
-      padding-right: 0;
-      margin-bottom: 20px;
-    }
-  
-    .image {
-      max-width: 100%;
-      height: auto;
-    }
-  
-    .title {
-      font-size: 2rem;
-    }
-  
-    .text {
-      font-size: 1rem;
-    }
-  }
-  
+}
 
+/* Responsivo para móviles */
+@media (max-width: 1024px) {
+  .cards-container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

@@ -19,6 +19,10 @@
       href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
   </head>
   <body>
     <nav class="navbar">
@@ -32,11 +36,8 @@
       <button class="prev">&#10094;</button>
       <div class="slides">
         <div class="slide" style="background-image: url('./assets/01.jpg')">
-          <h1>Psicología Online</h1>
-          <p>
-            Sesiones por videollamada, mensajes diarios con tu psicólogo y
-            acompañamiento semanal.
-          </p>
+          <h1>WEBPSICO.COM</h1>
+          <p>Terapia psicológica online en castellano</p>
         </div>
         <div class="slide" style="background-image: url('./assets/02.jpg')">
           <h1>Tu bienestar es nuestra prioridad</h1>
@@ -46,8 +47,22 @@
       <button class="next">&#10095;</button>
     </section>
 
-    <section class="Nosotros">
+    <section id="nosotros" class="Nosotros">
       <div class="container">
+        <!-- Primera fila: Imagen derecha, texto izquierda -->
+        <div class="text-container">
+          <h2 class="title">Nosotros</h2>
+          <p class="text">
+            <strong>Webpsico.com</strong> surge para responder a la necesidad de
+            muchas personas que buscan atención psicológica en castellano, con
+            profesionales de amplia trayectoria clínica. La lengua materna es el
+            vehículo privilegiado para expresar las emociones y construir un
+            lazo terapéutico sólido. Por eso, ofrecemos un espacio de escucha
+            accesible desde cualquier parte del mundo, para quienes deseen
+            abordar su sufrimiento psíquico con la contención y la profundidad
+            que el trabajo clínico requiere.
+          </p>
+        </div>
         <div class="image-container">
           <img
             src="./assets/03.jpg"
@@ -55,27 +70,32 @@
             class="image"
           />
         </div>
+
+        <!-- Segunda fila: Imagen izquierda, texto derecha -->
+        <div class="image-container row-reverse">
+          <img
+            src="./assets/04.jpg"
+            alt="Otra imagen de terapia online"
+            class="image"
+          />
+        </div>
         <div class="text-container">
-          <h2 class="title">Nosotros</h2>
           <p class="text">
-            En nuestra plataforma, entendemos que la salud mental es un aspecto
-            fundamental de tu bienestar. Por eso, ofrecemos terapia online de
-            alta calidad, brindando un espacio seguro, accesible y cómodo para
-            que puedas trabajar en tu crecimiento personal desde la comodidad de
-            tu hogar.
+            Frente a este panorama, creemos en la importancia de hacerle un
+            lugar a la palabra, de construir un espacio donde cada quien pueda
+            desplegar sus inquietudes, interrogarlas y encontrar nuevas formas
+            de habitar este mundo.
           </p>
           <p class="text">
-            Nuestra misión es ofrecerte el acompañamiento adecuado a través de
-            sesiones virtuales con psicólogos altamente capacitados y con amplia
-            experiencia en diversas áreas. Nos especializamos en ofrecerte un
-            apoyo constante mediante videollamadas y mensajes diarios, para que
-            puedas recibir la orientación y el soporte emocional que necesitas
-            en cualquier momento del día.
-          </p>
-          <p class="text">
-            Sabemos que cada persona es única, por eso nuestro enfoque se adapta
-            a tus necesidades individuales, trabajando a tu ritmo y en un
-            entorno completamente privado y confidencial.
+            Vivimos en un siglo marcado por la inmediatez, la hiperconectividad
+            y la sobrecarga de tareas. Las exigencias laborales, sociales y
+            personales suelen generar niveles de estrés, angustia e
+            insatisfacción difíciles de tratar. La depresión, la fobia, la
+            impulsividad y otras formas del malestar pueden volverse
+            insoportables cuando no encuentran un lugar para ser dichos. El
+            desarraigo, ya sea por migraciones, cambios de vida o distancias
+            afectivas, también puede convertirse en un motivo para buscar apoyo
+            terapéutico.
           </p>
           <p class="text">
             <strong>Tu bienestar es nuestra prioridad.</strong> Estamos aquí
@@ -84,9 +104,79 @@
         </div>
       </div>
     </section>
-    <section class="Servicios"></section>
+
+    <section id="servicios" class="Servicios">
+      <h2 class="title">Nuestra Metodología</h2>
+      <div class="cards-container">
+        <div class="card">
+          <i class="fas fa-globe"></i>
+          <h3>Atención online</h3>
+          <p>Desde cualquier parte del mundo.</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-handshake"></i>
+          <h3>Honorarios</h3>
+          <p>Se acuerdan con el profesional asignado.</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-comments"></i>
+          <h3>En castellano</h3>
+          <p>Sesiones en tu idioma nativo.</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-clock"></i>
+          <h3>Flexibilidad horaria</h3>
+          <p>Adaptado a tu disponibilidad.</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-user-shield"></i>
+          <h3>Confidencialidad</h3>
+          <p>Ética profesional garantizada.</p>
+        </div>
+      </div>
+    </section>
+    <section class="timeline-section">
+      <h2 class="title">Principales Consultas</h2>
+      <div class="timeline">
+          <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content left">
+                  <h3>Desarraigo</h3>
+              </div>
+          </div>
+          <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content right">
+                  <h3>Estrés</h3>
+              </div>
+          </div>
+          <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content left">
+                  <h3>Impulsividad</h3>
+              </div>
+          </div>
+          <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content right">
+                  <h3>Depresión</h3>
+              </div>
+          </div>
+          <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content left">
+                  <h3>Ansiedad</h3>
+              </div>
+          </div>
+          <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content right">
+                  <h3>Fobias</h3>
+  
+
     <section class="Contacto"></section>
     <footer></footer>
     <script src="scripts/carrousel.js"></script>
+    <script src="scripts/timeline-section.js"></script>
   </body>
 </html>
