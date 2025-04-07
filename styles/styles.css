@@ -18,23 +18,40 @@ body {
 }
 
 /* Estilos del navbar */
-nav {
+
+.navbar {
   background-color: var(--color4);
-  padding: 25px;
+  color: white;
+  padding: 10px 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Contenedor para centrar los links */
+.nav-center {
+  flex: 1;
   display: flex;
   justify-content: center;
 }
 
-nav a {
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
   color: white;
   text-decoration: none;
   font-size: 18px;
   padding: 10px 20px;
+  font-weight: bold;
   position: relative;
   transition: color 0.3s;
 }
 
-nav a::after {
+.nav-links a::after {
   content: "";
   position: absolute;
   left: 50%;
@@ -45,13 +62,21 @@ nav a::after {
   transition: width 0.3s ease, left 0.3s ease;
 }
 
-nav a:hover {
+.nav-links a:hover {
   color: var(--color2);
 }
 
-nav a:hover::after {
+.nav-links a:hover::after {
   width: 100%;
   left: 0;
+}
+
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  user-select: none;
+  color: white;
 }
 
 /* Estilos del carrusel */
@@ -313,27 +338,6 @@ button.next:hover {
   transform: translateY(0);
 }
 
-/* Responsivo para móviles */
-@media (max-width: 768px) {
-  .timeline::before {
-      left: 20px;
-  }
-
-  .timeline-dot {
-      left: 20px;
-  }
-
-  .timeline-content {
-      width: 80%;
-  }
-
-  .timeline-content.left, .timeline-content.right {
-      left: 40px;
-      right: auto;
-      text-align: left;
-  }
-}
-
 footer {
   width: 100%;
   padding: 20px;
@@ -344,8 +348,50 @@ footer {
   font-size: 1rem;
 }
 
-
+/* Responsivo para Tablets */
 @media (max-width: 768px) {
+  .carrousel {
+    height: 400px;
+  }
+
+  .slide {
+    height: 400px;
+    padding: 15px;
+  }
+
+  .slide h1 {
+    font-size: 24px;
+  }
+
+  .slide p {
+    font-size: 15px;
+  }
+
+  button.prev,
+  button.next {
+    font-size: 20px;
+    padding: 8px 16px;
+  }
+
+  .timeline::before {
+    left: 20px;
+  }
+
+  .timeline-dot {
+    left: 20px;
+  }
+
+  .timeline-content {
+    width: 80%;
+  }
+
+  .timeline-content.left,
+  .timeline-content.right {
+    left: 40px;
+    right: auto;
+    text-align: left;
+  }
+
   .cards-container {
     flex-direction: column;
     align-items: center;
@@ -391,7 +437,8 @@ footer {
     font-size: 1rem;
   }
   .timeline::before {
-    left: 20px;max-width: 480px
+    left: 20px;
+    max-width: 480px;
   }
 
   .timeline-content {
@@ -404,19 +451,125 @@ footer {
     right: auto;
     text-align: left;
   }
+
+  .Nosotros {
+    text-align: center;
+  }
+
+  .Nosotros .container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 20px 10px;
+  }
+
+  .Nosotros .title {
+    font-size: 28px;
+    margin-right: 0;
+  }
+
+  .image {
+    height: auto;
+    max-width: 100%;
+  }
+
+  .text-container {
+    padding: 0;
+    text-align: justify;
+  }
+
+  .row-reverse {
+    display: flex;
+    flex-direction: column;
+    order: 1;
+  }
 }
 
-/* Responsivo para móviles */
+/* Responsivo para TV */
 @media (max-width: 1024px) {
   .cards-container {
     flex-wrap: wrap;
     justify-content: center;
   }
+
+  .carrousel {
+    height: 500px;
+  }
+
+  .slide {
+    height: 500px;
+  }
+
+  .slide h1 {
+    font-size: 28px;
+  }
+
+  .slide p {
+    font-size: 16px;
+  }
 }
 
+/* Mobile Responsive */
+
 @media (max-width: 480px) {
+  .carrousel {
+    height: 300px;
+  }
+
+  .slide {
+    height: 300px;
+    padding: 10px;
+  }
+
+  .slide h1 {
+    font-size: 20px;
+  }
+
+  .slide p {
+    font-size: 14px;
+  }
+
+  button.prev,
+  button.next {
+    font-size: 18px;
+    padding: 6px 12px;
+  }
+
   footer {
     font-size: 0.9rem;
     padding: 15px;
+  }
+
+  .navbar {
+    justify-content: space-between;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .nav-center {
+    flex: 1;
+    justify-content: flex-start;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: var(--color4);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    text-align: center;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links a {
+    border-top: 1px solid #333;
   }
 }
