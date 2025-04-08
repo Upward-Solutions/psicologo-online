@@ -7,6 +7,10 @@
   --color5: #2bc9c8;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -15,6 +19,7 @@ html {
 body {
   margin: 0;
   font-family: "Raleway", sans-serif;
+  overflow-x: hidden;
 }
 
 /* Estilos del navbar */
