@@ -23,6 +23,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   </head>
   <body>
     <nav class="navbar">
@@ -66,13 +67,16 @@
             que el trabajo clínico requiere.
           </p>
         </div>
+       
         <div class="image-container">
           <img
             src="./assets/03.jpg"
             alt="Imagen de terapia online"
-            class="image"
+            class="image" 
+            data-aos="fade-left"
           />
         </div>
+        
 
         <!-- Segunda fila: Imagen izquierda, texto derecha -->
         <div class="image-container row-reverse">
@@ -80,6 +84,7 @@
             src="./assets/04.jpg"
             alt="Otra imagen de terapia online"
             class="image"
+            data-aos="fade-right"
           />
         </div>
         <div class="text-container">
@@ -111,27 +116,27 @@
     <section id="servicios" class="Servicios">
       <h2 class="title">Nuestra Metodología</h2>
       <div class="cards-container">
-        <div class="card">
+        <div class="card" data-aos="flip-left">
           <i class="fas fa-globe"></i>
           <h3>Atención online</h3>
           <p>Desde cualquier parte del mundo.</p>
         </div>
-        <div class="card">
+        <div class="card" data-aos="flip-right">
           <i class="fas fa-handshake"></i>
           <h3>Honorarios</h3>
           <p>Se acuerdan con el profesional asignado.</p>
         </div>
-        <div class="card">
+        <div class="card" data-aos="flip-left">
           <i class="fas fa-comments"></i>
           <h3>En castellano</h3>
           <p>Sesiones en tu idioma nativo.</p>
         </div>
-        <div class="card">
+        <div class="card" data-aos="flip-right">
           <i class="fas fa-clock"></i>
           <h3>Flexibilidad horaria</h3>
           <p>Adaptado a tu disponibilidad.</p>
         </div>
-        <div class="card">
+        <div class="card" data-aos="flip-left">
           <i class="fas fa-user-shield"></i>
           <h3>Confidencialidad</h3>
           <p>Ética profesional garantizada.</p>
@@ -182,5 +187,9 @@
     <script src="scripts/carrousel.js"></script>
     <script src="scripts/timeline-section.js"></script>
     <script src="scripts/menu.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>
