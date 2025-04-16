@@ -82,6 +82,7 @@ body {
   cursor: pointer;
   user-select: none;
   color: white;
+  z-index: 10000; /* Esto asegura que esté por encima de otros elementos */
 }
 
 /* Estilos del carrusel */
@@ -93,6 +94,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 1; /* Este z-index puede ayudar a no tapar otros elementos */
 }
 
 /* Contenedor de slides */
@@ -353,8 +355,61 @@ footer {
   font-size: 1rem;
 }
 
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-float img {
+  width: 70%;
+  height: auto;
+}
+
+.whatsapp-float a {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+}
+
 /* Responsivo para Tablets */
 @media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .nav-links {
+    display: none;
+    width: 100%;
+    text-align: center;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links.active {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav-links a {
+    padding: 10px;
+  }
   .carrousel {
     height: 400px;
   }
@@ -372,9 +427,8 @@ footer {
     font-size: 15px;
   }
 
-  button.prev,
-  button.next {
-    font-size: 20px;
+  button.prev, button.next {
+    font-size: 20px; /* Ajusta el tamaño del botón */
     padding: 8px 16px;
   }
 
@@ -488,6 +542,14 @@ footer {
     flex-direction: column;
     order: 1;
   }
+
+  .whatsapp-float {
+    z-index: 9999; /* Asegura que el icono de WhatsApp esté siempre encima */
+  }
+  .carrousel {
+    position: relative;
+    z-index: 1; /* Coloca el carrusel debajo del icono de WhatsApp */
+  }
 }
 
 /* Responsivo para TV */
@@ -519,6 +581,7 @@ footer {
 @media (max-width: 480px) {
   .carrousel {
     height: 300px;
+    z-index: 1;
   }
 
   .slide {
@@ -576,5 +639,19 @@ footer {
 
   .nav-links a {
     border-top: 1px solid #333;
+  }
+
+  .whatsapp-float {
+    width: 50px;
+    height: 50px;
+    .whatsapp-float {
+      bottom: 10px; /* Ajusta la distancia desde el fondo si es necesario */
+      right: 10px; /* Ajusta la distancia desde la derecha */
+      z-index: 10001; /* Asegura que el WhatsApp y el hamburguesa estén arriba */
+    }
+
+    .whatsapp-float img {
+      width: 65%;
+    }
   }
 }
