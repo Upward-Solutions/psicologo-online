@@ -1,47 +1,48 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const prevButton = document.querySelector(".prev");
-  const nextButton = document.querySelector(".next");
-  const slides = document.querySelectorAll(".slide");
+  const track = document.querySelector(".carousel-track");
+  const slides = Array.from(document.querySelectorAll(".carousel-slide"));
+  const prevButton = document.querySelector(".carousel-button.prev");
+  const nextButton = document.querySelector(".carousel-button.next");
   let currentIndex = 0;
 
-  document.addEventListener("DOMContentLoaded", function () {
-    const hamburger = document.getElementById("hamburger");
-    const navLinks = document.getElementById("navLinks");
-
-    hamburger.addEventListener("click", function () {
-      navLinks.classList.toggle("show");
-    });
-  });
-
-  // Función para mostrar la diapositiva correspondiente
-  function showSlide(index) {
-    // Ocultar todas las diapositivas
-    slides.forEach((slide) => {
-      slide.style.display = "none";
-    });
-
-    // Mostrar la diapositiva actual
-    slides[index].style.display = "block";
+  // ✅ Función para actualizar imagen según tamaño de pantalla
+  function updateFirstSlideImage() {
+    if (window.innerWidth <= 480) {
+      slides[0].style.backgroundImage = "url('./assets/05.jpg')";
+    } else {
+      slides[0].style.backgroundImage = "url('./assets/02.jpg')";
+    }
   }
 
-  // Evento para el botón "prev"
-  prevButton.addEventListener("click", function () {
+  // 🖼️ Actualiza la imagen inicial
+  updateFirstSlideImage();
+
+  function updateSlidePosition() {
+    const slideWidth = slides[0].offsetWidth;
+    track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+  }
+
+  nextButton.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % slides.length;
+    updateSlidePosition();
+  });
+
+  prevButton.addEventListener("click", () => {
     currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-    showSlide(currentIndex);
+    updateSlidePosition();
   });
 
-  // Evento para el botón "next"
-  nextButton.addEventListener("click", function () {
+  // 🔄 Auto slide
+  setInterval(() => {
     currentIndex = (currentIndex + 1) % slides.length;
-    showSlide(currentIndex);
+    updateSlidePosition();
+  }, 5000);
+
+  // 📐 Recalcula imagen y posición al redimensionar
+  window.addEventListener("resize", () => {
+    updateFirstSlideImage();
+    updateSlidePosition();
   });
 
-  // Mostrar la primera diapositiva al cargar
-  showSlide(currentIndex);
-
-  // Cambio automático cada 5 segundos
-  setInterval(function () {
-    currentIndex = (currentIndex + 1) % slides.length;
-    showSlide(currentIndex);
-  }, 5000); // 5000ms = 5 segundos
+  updateSlidePosition(); // Inicial
 });
