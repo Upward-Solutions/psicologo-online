@@ -620,6 +620,10 @@ footer {
     overflow-x: hidden;
   }
 
+  .logo-container {
+    display: none;
+  }
+
   .carousel-slide.slide-hero {
     background-image: url('./assets/05.jpg');
   }
@@ -656,11 +660,14 @@ footer {
   }
 
   .navbar {
+    display: flex;
     justify-content: space-between;
+    align-items: center;
   }
 
   .hamburger {
     display: block;
+    margin-left: auto; /* Esto mueve el menú hamburguesa a la derecha */
   }
 
   .nav-center {
