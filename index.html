@@ -1,200 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Psicología Online</title>
-  <link rel="icon" type="image/png" href="./assets/logo02.png" />
-  <link rel="stylesheet" href="./styles/styles.css" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap"
-    rel="stylesheet"
-  />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&display=swap"
-    rel="stylesheet"
-  />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
-    rel="stylesheet"
-  />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-  />
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Psicología Online</title>
+    <link rel="icon" type="image/png" href="./assets/logo02.png"/>
+    <link rel="stylesheet" href="./styles/styles.css"/>
+    <link
+            href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap"
+            rel="stylesheet"
+    />
+    <link
+            href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&display=swap"
+            rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link
+            href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+            rel="stylesheet"
+    />
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
-  <body>
-    <nav class="navbar">
-      <div class="logo-container">
-        <img src="./assets/logo01.png" alt="Logo Webpsico" class="logo-navbar" />
-      </div>
-      <div class="nav-links" id="navLinks">
+<body>
+<nav class="navbar">
+    <div class="logo-container">
+        <img src="./assets/logo01.png" alt="Logo Webpsico" class="logo-navbar"/>
+    </div>
+    <div class="nav-links" id="navLinks">
         <a href="#nosotros">Nosotros</a>
         <a href="#servicios">Servicios</a>
         <a href="https://wa.link/718h1y" target="_blank" rel="noopener noreferrer">Contacto</a>
-      </div>
-      <div class="hamburger" id="hamburger">&#9776;</div>
-    </nav>
-    
-    <section class="carousel">
-      <div class="carousel-track">
-        <div class="carousel-slide slide-text-up slide-hero">
-          <img src="./assets/logo01.png" alt="Logo Webpsico" class="carousel-logo" />
-        </div>
-        <div class="carousel-slide slide-text-up" style="background-image: url('./assets/01.jpg')">
-          <h1>Tu bienestar es nuestra prioridad</h1>
-          <p>Comienza hoy tu camino hacia una mejor salud mental.</p>
-        </div>
-      <button class="carousel-button prev">&#10094;</button>
-      <button class="carousel-button next">&#10095;</button>
-    </section>
-    
-    
-    <div class="whatsapp-float">
-      <a href="https://wa.me/1234567890" target="_blank" rel="noopener">
-        <img src="./assets/whatsapp.png" alt="WhatsApp" />
-      </a>
-    </div>    
+    </div>
+    <div class="hamburger" id="hamburger">&#9776;</div>
+</nav>
 
-    <section id="nosotros" class="Nosotros">
-      <div class="container">
+<section class="banner">
+    <h1>Tu bienestar es nuestra prioridad</h1>
+    <p>Comienza hoy tu camino hacia una mejor salud mental.</p>
+</section>
+
+<div class="whatsapp-float">
+    <a href="https://api.whatsapp.com/send?phone=5491138978104&text=Hola%2C%20Webpsico.com%20me%20gustar%C3%ADa%20comenzar%20un%20tratamiento"
+       target="_blank" rel="noopener">
+        <span class="tooltip-text">A un click de comenzar tu terapia</span>
+        <img src="./assets/whatsapp.png" alt="WhatsApp"/>
+    </a>
+</div>
+
+
+<section id="nosotros" class="Nosotros">
+    <div class="container">
         <!-- Primera fila: Imagen derecha, texto izquierda -->
         <div class="text-container">
-          <h2 class="title">Nosotros</h2>
-          <p class="text">
-            <strong>Webpsico.com</strong> surge para responder a la necesidad de
-            muchas personas que buscan atención psicológica en castellano, con
-            profesionales de amplia trayectoria clínica. La lengua materna es el
-            vehículo privilegiado para expresar las emociones y construir un
-            lazo terapéutico sólido. Por eso, ofrecemos un espacio de escucha
-            accesible desde cualquier parte del mundo, para quienes deseen
-            abordar su sufrimiento psíquico con la contención y la profundidad
-            que el trabajo clínico requiere.
-          </p>
+            <h2 class="title">Nosotros</h2>
+            <p class="text">
+                <strong>Webpsico.com</strong> nace para ayudar a adolescentes que buscan apoyo psicológico en español,
+                con profesionales con experiencia. Hablar en tu lengua materna es clave para expresar emociones y crear
+                una buena relación con el terapeuta. Por eso, ofrecemos un espacio accesible desde cualquier lugar,
+                donde puedes hablar sobre lo que sientes y recibir el apoyo que necesitas.
+            </p>
         </div>
-       
         <div class="image-container">
-          <img
-            src="./assets/03.jpg"
-            alt="Imagen de terapia online"
-            class="image" 
-            data-aos="fade-left"
-          />
+            <img
+                    src="./assets/03.jpg"
+                    alt="Imagen de terapia online"
+                    class="image"
+                    data-aos="fade-left"
+            />
         </div>
-        
 
         <!-- Segunda fila: Imagen izquierda, texto derecha -->
         <div class="image-container row-reverse">
-          <img
-            src="./assets/04.jpg"
-            alt="Otra imagen de terapia online"
-            class="image"
-            data-aos="fade-right"
-          />
+            <img
+                    src="./assets/04.jpg"
+                    alt="Otra imagen de terapia online"
+                    class="image"
+                    data-aos="fade-right"
+            />
         </div>
         <div class="text-container">
-          <p class="text">
-            Frente a este panorama, creemos en la importancia de hacerle un
-            lugar a la palabra, de construir un espacio donde cada quien pueda
-            desplegar sus inquietudes, interrogarlas y encontrar nuevas formas
-            de habitar este mundo.
-          </p>
-          <p class="text">
-            Vivimos en un siglo marcado por la inmediatez, la hiperconectividad
-            y la sobrecarga de tareas. Las exigencias laborales, sociales y
-            personales suelen generar niveles de estrés, angustia e
-            insatisfacción difíciles de tratar. La depresión, la fobia, la
-            impulsividad y otras formas del malestar pueden volverse
-            insoportables cuando no encuentran un lugar para ser dichos. El
-            desarraigo, ya sea por migraciones, cambios de vida o distancias
-            afectivas, también puede convertirse en un motivo para buscar apoyo
-            terapéutico.
-          </p>
-          <p class="text">
-            <strong>Tu bienestar es nuestra prioridad.</strong> Estamos aquí
-            para apoyarte en cada paso de tu viaje hacia una mejor salud mental.
-          </p>
+            <p class="text">
+                Frente a este panorama, creemos en la importancia de dar espacio a tus palabras,
+                donde puedas expresar tus inquietudes y encontrar nuevas formas de enfrentar el mundo.
+            </p>
+            <p class="text">
+                Hoy vivimos en un mundo muy rápido, lleno de redes sociales y muchas tareas,
+                lo que puede generar estrés y angustia. Los problemas como la ansiedad, la depresión,
+                y la presión por encajar pueden volverse abrumadores si no tienes un lugar para compartirlos.
+                También, el desarraigo por cambios en tu vida o distancias con seres queridos puede ser difícil de
+                llevar.
+            </p>
+            <p class="text">
+                <strong>Tu bienestar es nuestra prioridad. Estamos aquí para apoyarte en cada paso hacia
+                    una mejor salud mental.</strong>
+            </p>
         </div>
-      </div>
-    </section>
+    </div>
+</section>
 
-    <section id="servicios" class="Servicios">
-      <h2 class="title">Nuestra Metodología</h2>
-      <div class="cards-container">
+<section id="servicios" class="Servicios">
+    <h2 class="title">Nuestra Metodología</h2>
+    <div class="cards-container">
         <div class="card" data-aos="flip-left">
-          <i class="fas fa-globe"></i>
-          <h3>Atención online</h3>
-          <p>Desde cualquier parte del mundo.</p>
+            <i class="fas fa-globe"></i>
+            <h3>Atención online</h3>
+            <p>Desde cualquier parte del mundo.</p>
         </div>
         <div class="card" data-aos="flip-right">
-          <i class="fas fa-handshake"></i>
-          <h3>Honorarios</h3>
-          <p>Se acuerdan con el profesional asignado.</p>
+            <i class="fas fa-handshake"></i>
+            <h3>Honorarios</h3>
+            <p>Se acuerdan con el profesional asignado.</p>
         </div>
         <div class="card" data-aos="flip-left">
-          <i class="fas fa-comments"></i>
-          <h3>En castellano</h3>
-          <p>Sesiones en tu idioma nativo.</p>
+            <i class="fas fa-comments"></i>
+            <h3>En castellano</h3>
+            <p>Sesiones en tu idioma nativo.</p>
         </div>
         <div class="card" data-aos="flip-right">
-          <i class="fas fa-clock"></i>
-          <h3>Flexibilidad horaria</h3>
-          <p>Adaptado a tu disponibilidad.</p>
+            <i class="fas fa-clock"></i>
+            <h3>Flexibilidad horaria</h3>
+            <p>Adaptado a tu disponibilidad.</p>
         </div>
         <div class="card" data-aos="flip-left">
-          <i class="fas fa-user-shield"></i>
-          <h3>Confidencialidad</h3>
-          <p>Ética profesional garantizada.</p>
+            <i class="fas fa-user-shield"></i>
+            <h3>Confidencialidad</h3>
+            <p>Ética profesional garantizada.</p>
         </div>
-      </div>
-    </section>
-    <section class="timeline-section">
-      <h2 class="title">Principales Consultas</h2>
-      <div class="timeline">
-          <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-content left">
-                  <h3>Desarraigo</h3>
-              </div>
-          </div>
-          <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-content right">
-                  <h3>Estrés</h3>
-              </div>
-          </div>
-          <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-content left">
-                  <h3>Impulsividad</h3>
-              </div>
-          </div>
-          <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-content right">
-                  <h3>Depresión</h3>
-              </div>
-          </div>
-          <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-content left">
-                  <h3>Ansiedad</h3>
-              </div>
-          </div>
-          <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-content right">
-                  <h3>Fobias</h3>
-      </section>
-    <section class="Contacto"></section>
-    <footer>  <p>Realizado por Upward Solutions®</p> </footer>
-    <script src="scripts/carrousel.js"></script>
-    <script src="scripts/timeline-section.js"></script>
-    <script src="scripts/menu.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-      AOS.init();
-    </script>
-  </body>
+    </div>
+</section>
+<section class="timeline-section">
+    <h2 class="title">Principales Consultas</h2>
+    <div class="timeline">
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content left">
+                <h3>Ansiedad</h3>
+            </div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content right">
+                <h3>Depresión</h3>
+            </div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content left">
+                <h3>Autoestima</h3>
+            </div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content right">
+                <h3>Bullying</h3>
+            </div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content left">
+                <h3>Impulsividad</h3>
+            </div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content right">
+                <h3>Estrés Académico</h3>
+            </div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content left">
+                <h3>Desarraigo</h3>
+            </div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content right">
+                <h3>Manejo de Emociones</h3>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="Contacto"></section>
+<footer><p>Realizado por Upward Solutions ®</p></footer>
+<script src="scripts/timeline-section.js"></script>
+<script src="scripts/menu.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init()</script>
+</body>
 </html>

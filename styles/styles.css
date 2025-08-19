@@ -1,729 +1,689 @@
 /* Variables de color */
 :root {
-  --color1: #060610;
-  --color2: #5D6A73;
-  --color3: #262B51;
-  --color4: #3D65AA;
-  --color5: #fafafa;
+    --color1: #060610;
+    --color2: #5D6A73;
+    --color3: #262B51;
+    --color4: #3D65AA;
+    --color5: #fafafa;
+    --color6: #d9d9d9;
 }
 
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 /* Estilos generales */
 body {
-  margin: 0;
-  font-family: "Raleway", sans-serif;
-  overflow-x: hidden;
+    margin: 0;
+    font-family: "Raleway", sans-serif;
+    overflow-x: hidden;
 }
 
 /* Estilos del navbar */
 
 .navbar {
-  background-color: var(--color4);
-  color: white;
-  padding: 10px 20px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+    background-color: var(--color5);
+    color: white;
+    padding: 10px 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .logo-container {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 .logo-navbar {
-  height: 50px;
-  width: auto;
-  object-fit: contain;
+    height: 50px;
+    width: auto;
+    object-fit: contain;
 }
 
 .nav-links {
-  display: flex;
-  gap: 20px;
+    display: flex;
+    gap: 20px;
 }
 
 .nav-links a {
-  color: white;
-  text-decoration: none;
-  font-size: 18px;
-  padding: 10px 20px;
-  font-weight: bold;
-  position: relative;
-  transition: color 0.3s;
+    color: var(--color1);
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 20px;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s;
 }
 
 .nav-links a::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  width: 0;
-  height: 2px;
-  background-color: var(--color1);
-  transition: width 0.3s ease, left 0.3s ease;
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color4);
+    transition: width 0.3s ease, left 0.3s ease;
 }
 
 .nav-links a:hover {
-  color: var(--color1);
+    color: var(--color4);
 }
 
 .nav-links a:hover::after {
-  width: 100%;
-  left: 0;
+    width: 100%;
+    left: 0;
 }
 
 .hamburger {
-  display: none;
-  font-size: 28px;
-  cursor: pointer;
-  user-select: none;
-  color: var(--color5);
-  z-index: 10000;
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    user-select: none;
+    color: var(--color1);
+    z-index: 10000;
 }
-
 
 /* Estilos del carrusel */
-.carousel {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  height: 600px;
-}
-
-.carousel-track {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-  height: 100%;
-}
-
-.carousel-slide {
-  min-width: 100%;
-  height: 600px;
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  text-align: center;
-  padding: 20px;
-}
-
-.carousel-slide h1 {
-  font-size: 32px;
-  font-weight: 600;
-  margin-bottom: 10px;
-  font-family: "Lora", serif;
-}
-
-.carousel-slide p {
-  font-size: 18px;
-  font-family: "Lora", serif;
-}
-
-.carousel-slide.slide-hero {
-  background-image: url('./assets/02.jpg');
-  background-size: cover;
-  background-position: center;
-}
-
-.carousel-button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  font-size: 24px;
-  cursor: pointer;
-  z-index: 2;
-  transition: background-color 0.3s ease;
-}
-
-.carousel-button:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-.carousel-button.prev {
-  left: 10px;
-}
-
-.carousel-button.next {
-  right: 10px;
-}
-
-.carousel-slide.slide-text-up {
-  justify-content: flex-start;
-  padding-top: 25px; /* podés ajustar el valor */
-}
-
-.carousel-slide.slide-text-up {
-  justify-content: flex-start;
-  padding-top: 50px; /* o el valor que te guste */
-}
-
-.carousel-logo {
-  max-width: 80%;
-  max-height: 200px;
-  object-fit: contain;
-  z-index: 1;
-  animation: fadeIn 1.5s ease;
-}
-
-/* Centrar contenido dentro del slide */
-.carousel-slide {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* ...otros estilos que ya tenías */
+.banner {
+    background-image: url('../assets/banner.png');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 100px 0;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    animation: fadeIn 1s ease-in-out;
+    max-width: 100%;
+    width: 100%;
+    height: 800px;
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.95); }
-  to { opacity: 1; transform: scale(1); }
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 
 .Nosotros {
-  text-align: right; /* Alinea el título a la derecha */
-  margin-bottom: 20px;
+    text-align: right; /* Alinea el título a la derecha */
+    margin-bottom: 20px;
+    background-color: var(--color6);
 }
 
 .Nosotros .title {
-  font-size: 32px;
-  font-weight: bold;
-  margin-right: 10%; /* Ajusta el margen derecho */
+    font-size: 32px;
+    font-weight: bold;
+    margin-right: 10%; /* Ajusta el margen derecho */
 }
 
 .Nosotros .container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  align-items: center;
-  max-width: 1200px;
-  margin: auto;
-  padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
 }
 
 .image-container {
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
 }
 
 .image {
-  width: 100%;
-  max-width: 500px;
-  border-radius: 10px;
-  height: 400px;
-  object-fit: cover;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+    height: 400px;
+    object-fit: cover;
 }
 
 .text-container {
-  text-align: justify;
+    text-align: justify;
 }
 
 /* Segunda fila con imagen a la izquierda */
 .row-reverse {
-  display: contents;
+    display: contents;
 }
 
 .row-reverse .image-container {
-  order: -1;
+    order: -1;
 }
 
 .Servicios {
-  text-align: center;
-  padding: 50px 20px;
-  background-color: #f8f8f8;
+    text-align: center;
+    padding: 50px 20px;
 }
 
 .title {
-  font-size: 28px;
-  margin-bottom: 20px;
+    font-size: 28px;
+    margin-bottom: 20px;
 }
 
 /* Contenedor de las tarjetas */
 .cards-container {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-  max-width: 1100px;
-  margin: auto;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    margin: auto;
 }
 
 /* Estilo de las cards */
 .card {
-  background-color: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  transition: transform 0.3s ease-in-out;
-  width: 200px;
-  height: 250px; /* Más alargadas */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    width: 200px;
+    height: 250px; /* Más alargadas */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Efecto hover */
 .card:hover {
-  transform: scale(1.05);
+    transform: scale(1.05);
 }
 
 /* Íconos */
 .card i {
-  font-size: 40px;
-  color: var(--color4);
-  margin-bottom: 10px;
+    font-size: 40px;
+    color: var(--color4);
+    margin-bottom: 10px;
 }
 
 /* Estilos Generales */
 .timeline-section {
-  text-align: center;
-  padding: 50px 20px;
-  background-color: #f8f8f8;
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f8f8f8;
 }
 
 .title {
-  font-size: 28px;
-  margin-bottom: 20px;
+    font-size: 28px;
+    margin-bottom: 20px;
 }
 
 /* Contenedor de la línea de tiempo */
 .timeline {
-  position: relative;
-  padding: 50px 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    position: relative;
+    padding: 50px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* Línea central */
 .timeline::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 0;
-  width: 4px;
-  height: 100%;
-  background: var(--color2); /* Cambia el color si quieres */
-  transform: translateX(-50%);
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--color2); /* Cambia el color si quieres */
+    transform: translateX(-50%);
 }
 
 /* Ítems de la línea de tiempo */
 .timeline-item {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-  width: 80%;
-  max-width: 400px;
-  background: white;
-  padding: 20px;
-  margin: 20px 0;
-  border-left: 4px solid var(--color2);
-  position: relative;
-  border-left: none; /* Quita la línea */
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    width: 80%;
+    max-width: 400px;
+    background: white;
+    padding: 20px;
+    margin: 20px 0;
+    border-left: 4px solid var(--color2);
+    position: relative;
+    border-left: none; /* Quita la línea */
 }
 
 /* Puntos de la línea de tiempo */
 .timeline-dot {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 15px;
-  height: 15px;
-  background-color: var(--color4);
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 15px;
+    height: 15px;
+    background-color: var(--color4);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
 }
 
 /* Contenido de cada ítem */
 .timeline-content {
-  background-color: white;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 200px;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 /* Alineación alternada */
 .timeline-content.left {
-  left: -220px;
-  text-align: right;
+    left: -220px;
+    text-align: right;
 }
 
 .timeline-content.right {
-  right: -220px;
-  text-align: left;
+    right: -220px;
+    text-align: left;
 }
 
 /* Animación cuando aparecen en pantalla */
 .timeline-item.visible {
-  opacity: 1;
-  transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
 }
 
 footer {
-  width: 100%;
-  padding: 20px;
-  background-color: var(--color4);
-  color: #fff; /* Texto blanco */
-  text-align: center;
-  font-family: Arial, sans-serif;
-  font-size: 1rem;
+    width: 100%;
+    padding: 20px;
+    background-color: var(--color4);
+    color: #fff; /* Texto blanco */
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
 }
 
 .whatsapp-float {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 9999;
-  width: 60px;
-  height: 60px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: transform 0.3s ease;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease;
 }
 
 .whatsapp-float img {
-  width: 70%;
-  height: auto;
+    width: 70%;
+    height: auto;
 }
 
 .whatsapp-float a {
-  width: 100%;
-  height: auto;
-  display: block;
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.tooltip-text {
+    visibility: hidden;
+    opacity: 0;
+    width: 130px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 6px 10px;
+    border-radius: 6px;
+    position: absolute;
+    bottom: 110%; /* por encima del ícono */
+    left: 30%;
+    transform: translateX(-50%);
+    white-space: normal; /* permite saltos de línea */
+    word-wrap: break-word; /* para dividir en varias líneas */
+    overflow-wrap: break-word; /* equivalente moderno */
+    transition: opacity 0.3s;
+    font-size: 12px;
+    z-index: 10000;
+}
+
+.whatsapp-float a:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
 }
 
 .whatsapp-float:hover {
-  transform: scale(1.1);
+    transform: scale(1.1);
 }
 
 /* Responsivo para Tablets */
 @media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    padding: 10px;
-  }
+    .banner {
+        background-image: url('../assets/banner-mobile.png');
+    }
 
-  .nav-links {
-    display: none;
-    width: 100%;
-    text-align: center;
-  }
+    .navbar {
+        flex-direction: column;
+        padding: 10px;
+    }
 
-  .hamburger {
-    display: block;
-  }
+    .nav-links {
+        display: none;
+        width: 100%;
+        text-align: center;
+    }
 
-  .nav-links.active {
-    display: flex;
-    flex-direction: column;
-  }
+    .hamburger {
+        display: block;
+    }
 
-  .nav-links a {
-    padding: 10px;
-  }
-  .carrousel {
-    height: 400px;
-  }
+    .nav-links.active {
+        display: flex;
+        flex-direction: column;
+    }
 
-  .slide {
-    height: 400px;
-    padding: 15px;
-  }
+    .nav-links a {
+        padding: 10px;
+    }
 
-  .slide h1 {
-    font-size: 24px;
-  }
+    .carrousel {
+        height: 400px;
+    }
 
-  .slide p {
-    font-size: 15px;
-  }
+    .slide {
+        height: 400px;
+        padding: 15px;
+    }
 
-  button.prev, button.next {
-    font-size: 20px; /* Ajusta el tamaño del botón */
-    padding: 8px 16px;
-  }
+    .slide h1 {
+        font-size: 24px;
+    }
 
-  .timeline::before {
-    left: 20px;
-  }
+    .slide p {
+        font-size: 15px;
+    }
 
-  .timeline-dot {
-    left: 20px;
-  }
+    button.prev, button.next {
+        font-size: 20px; /* Ajusta el tamaño del botón */
+        padding: 8px 16px;
+    }
 
-  .timeline-content {
-    width: 80%;
-  }
+    .timeline::before {
+        left: 20px;
+    }
 
-  .timeline-content.left,
-  .timeline-content.right {
-    left: 40px;
-    right: auto;
-    text-align: left;
-  }
+    .timeline-dot {
+        left: 20px;
+    }
 
-  .cards-container {
-    flex-direction: column;
-    align-items: center;
-  }
+    .timeline-content {
+        width: 80%;
+    }
 
-  .card {
-    width: 80%;
-    max-width: 300px;
-  }
+    .timeline-content.left,
+    .timeline-content.right {
+        left: 40px;
+        right: auto;
+        text-align: left;
+    }
 
-  /* Estilos generales */
-  .timeline-section {
-    text-align: center;
-    padding: 50px 20px;
-    background-color: #f8f8f8;
-  }
+    .cards-container {
+        flex-direction: column;
+        align-items: center;
+    }
 
-  .title {
-    font-size: 28px;
-    margin-bottom: 20px;
-  }
+    .card {
+        width: 80%;
+        max-width: 300px;
+    }
 
-  .container {
-    flex-direction: column;
-    text-align: center;
-  }
+    /* Estilos generales */
+    .timeline-section {
+        text-align: center;
+        padding: 50px 20px;
+        background-color: #f8f8f8;
+    }
 
-  .image-container {
-    padding-right: 0;
-    margin-bottom: 20px;
-  }
+    .title {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
 
-  .image {
-    max-width: 100%;
-    height: auto;
-  }
+    .container {
+        flex-direction: column;
+        text-align: center;
+    }
 
-  .title {
-    font-size: 2rem;
-  }
+    .image-container {
+        padding-right: 0;
+        margin-bottom: 20px;
+    }
 
-  .text {
-    font-size: 1rem;
-  }
-  .timeline::before {
-    left: 20px;
-    max-width: 480px;
-  }
+    .image {
+        max-width: 100%;
+        height: auto;
+    }
 
-  .timeline-content {
-    width: 80%;
-  }
+    .title {
+        font-size: 2rem;
+    }
 
-  .timeline-content.left,
-  .timeline-content.right {
-    left: 40px;
-    right: auto;
-    text-align: left;
-  }
+    .text {
+        font-size: 1rem;
+    }
 
-  .Nosotros {
-    text-align: center;
-  }
+    .timeline::before {
+        left: 20px;
+        max-width: 480px;
+    }
 
-  .Nosotros .container {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    padding: 20px 10px;
-  }
+    .timeline-content {
+        width: 80%;
+    }
 
-  .Nosotros .title {
-    font-size: 28px;
-    margin-right: 0;
-  }
+    .timeline-content.left,
+    .timeline-content.right {
+        left: 40px;
+        right: auto;
+        text-align: left;
+    }
 
-  .image {
-    height: auto;
-    max-width: 100%;
-  }
+    .Nosotros {
+        text-align: center;
+    }
 
-  .text-container {
-    padding: 0;
-    text-align: justify;
-  }
+    .Nosotros .container {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        padding: 20px 10px;
+    }
 
-  .row-reverse {
-    display: flex;
-    flex-direction: column;
-    order: 1;
-  }
+    .Nosotros .title {
+        font-size: 28px;
+        margin-right: 0;
+    }
 
-  .whatsapp-float {
-    display: flex !important;
-    z-index: 999999;
-    bottom: 20px; /* Posición inferior fija */
-    right: 20px;  /* Posición derecha fija */
-  }
-  .carrousel {
-    position: relative;
-    z-index: 1; /* Coloca el carrusel debajo del icono de WhatsApp */
-  }
+    .image {
+        height: auto;
+        max-width: 100%;
+    }
+
+    .text-container {
+        padding: 0;
+        text-align: justify;
+    }
+
+    .row-reverse {
+        display: flex;
+        flex-direction: column;
+        order: 1;
+    }
+
+    .whatsapp-float {
+        display: flex !important;
+        z-index: 999999;
+        bottom: 20px; /* Posición inferior fija */
+        right: 20px; /* Posición derecha fija */
+    }
+
+    .carrousel {
+        position: relative;
+        z-index: 1; /* Coloca el carrusel debajo del icono de WhatsApp */
+    }
 }
 
 /* Responsivo para TV */
 @media (max-width: 1024px) {
-  .cards-container {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
+    .banner {
+        background-image: url('../assets/banner-mobile.png');
+    }
 
-  .carrousel {
-    height: 500px;
-  }
+    .cards-container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 
-  .slide {
-    height: 500px;
-  }
+    .carrousel {
+        height: 500px;
+    }
 
-  .slide h1 {
-    font-size: 28px;
-  }
+    .slide {
+        height: 500px;
+    }
 
-  .slide p {
-    font-size: 16px;
-  }
+    .slide h1 {
+        font-size: 28px;
+    }
+
+    .slide p {
+        font-size: 16px;
+    }
 }
 
 /* Mobile Responsive */
 
 @media (max-width: 480px) {
 
-  html, body {
-    overflow-x: hidden;
-  }
+    html, body {
+        overflow-x: hidden;
+    }
 
-  .logo-container {
-    display: none;
-  }
+    .logo-container {
+        display: none;
+    }
 
-  .carousel-slide.slide-hero {
-    background-image: url('./assets/05.jpg');
-  }
+    .carousel-slide.slide-hero {
+        background-image: url('./assets/05.jpg');
+    }
 
-  .carousel-track {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-  }
-  
-  .carousel-slide {
-    width: 100%;
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
-    flex-shrink: 0;
-  }
+    .carousel-track {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+    }
 
-  .slide h1 {
-    font-size: 20px;
-  }
+    .carousel-slide {
+        width: 100%;
+        height: 100vh;
+        background-size: cover;
+        background-position: center;
+        flex-shrink: 0;
+    }
 
-  .slide p {
-    font-size: 14px;
-  }
+    .slide h1 {
+        font-size: 20px;
+    }
 
-  .carousel-button.prev,
-  .carousel-button.next {
-    display: none;
-  }
+    .slide p {
+        font-size: 14px;
+    }
 
-  footer {
-    font-size: 0.9rem;
-    padding: 15px;
-  }
+    .carousel-button.prev,
+    .carousel-button.next {
+        display: none;
+    }
 
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+    footer {
+        font-size: 0.9rem;
+        padding: 15px;
+    }
 
-  .hamburger {
-    display: block;
-    margin-left: auto; /* Esto mueve el menú hamburguesa a la derecha */
-  }
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 
-  .nav-center {
-    flex: 1;
-    justify-content: flex-start;
-  }
+    .hamburger {
+        display: block;
+        margin-left: auto; /* Esto mueve el menú hamburguesa a la derecha */
+    }
 
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    background-color: var(--color4);
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    text-align: center;
-  }
+    .nav-center {
+        flex: 1;
+        justify-content: flex-start;
+    }
 
-  .nav-links.show {
-    display: flex;
-  }
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: var(--color4);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        text-align: center;
+    }
 
-  .nav-links a {
-    border-top: 1px solid #333;
-  }
+    .nav-links.show {
+        display: flex;
+    }
 
-  .timeline, .timeline-content {
-    width: 100%;
-    max-width: 100%;
-  }
+    .nav-links a {
+        border-top: 1px solid #333;
+    }
 
-  .cards-container {
-    padding: 0 10px;
-  }
+    .timeline, .timeline-content {
+        width: 100%;
+        max-width: 100%;
+    }
 
-  .whatsapp-float {
-    position: fixed !important;
-    bottom: 20px !important;
-    right: 20px !important;
-    z-index: 9999 !important;
-    width: 60px;
-    height: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+    .cards-container {
+        padding: 0 10px;
+    }
 
-  .whatsapp-float img {
-    width: 70%;
-    height: auto;
-  }
+    .whatsapp-float {
+        position: fixed !important;
+        bottom: 20px !important;
+        right: 20px !important;
+        z-index: 9999 !important;
+        width: 60px;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
-  .whatsapp-float a {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
+    .whatsapp-float img {
+        width: 70%;
+        height: auto;
+    }
+
+    .whatsapp-float a {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
 }
