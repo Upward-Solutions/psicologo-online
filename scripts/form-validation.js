@@ -150,20 +150,48 @@ document.addEventListener('DOMContentLoaded', function() {
             submitBtn.textContent = 'Enviando...';
             submitBtn.disabled = true;
 
-            // Simular envío (aquí puedes agregar la lógica real de envío)
-            setTimeout(() => {
-                alert('¡Consulta enviada exitosamente! Te contactaremos pronto.');
-                form.reset();
+            // Crear FormData con los datos del formulario
+            const formData = new FormData();
+            formData.append('nombre', nombreInput.value.trim());
+            formData.append('correo', correoInput.value.trim());
+            formData.append('consulta', consultaInput.value.trim());
 
-                // Limpiar clases de éxito
-                document.querySelectorAll('.success').forEach(input => {
-                    input.classList.remove('success');
-                });
+            // Enviar datos via AJAX
+            fetch('send-contact.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // Mostrar mensaje de éxito
+                    showSuccessMessage(data.message);
 
+                    // Resetear formulario
+                    form.reset();
+
+                    // Limpiar clases de éxito
+                    document.querySelectorAll('.success').forEach(input => {
+                        input.classList.remove('success');
+                    });
+
+                    // Resetear contador de caracteres
+                    charCounter.textContent = '0/500';
+                    charCounter.classList.remove('warning');
+                } else {
+                    // Mostrar mensaje de error del servidor
+                    showErrorMessage(data.message);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                showErrorMessage('Error de conexión. Por favor, verifica tu conexión a internet e intenta nuevamente.');
+            })
+            .finally(() => {
                 // Restaurar botón
                 submitBtn.textContent = originalText;
                 submitBtn.disabled = false;
-            }, 2000);
+            });
         } else {
             // Scroll al primer error
             const firstError = document.querySelector('.error');
@@ -173,6 +201,56 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     });
+
+    // Función para mostrar mensaje de éxito
+    function showSuccessMessage(message) {
+        const successDiv = document.createElement('div');
+        successDiv.className = 'success-notification';
+        successDiv.innerHTML = `
+            <div class="notification-content">
+                <span class="success-icon">✓</span>
+                <span class="success-text">${message}</span>
+            </div>
+        `;
+
+        // Insertar antes del formulario
+        form.parentElement.insertBefore(successDiv, form);
+
+        // Remover después de 5 segundos
+        setTimeout(() => {
+            if (successDiv.parentElement) {
+                successDiv.remove();
+            }
+        }, 5000);
+
+        // Scroll al mensaje
+        successDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    // Función para mostrar mensaje de error del servidor
+    function showErrorMessage(message) {
+        const errorDiv = document.createElement('div');
+        errorDiv.className = 'error-notification';
+        errorDiv.innerHTML = `
+            <div class="notification-content">
+                <span class="error-icon">⚠</span>
+                <span class="error-text">${message}</span>
+            </div>
+        `;
+
+        // Insertar antes del formulario
+        form.parentElement.insertBefore(errorDiv, form);
+
+        // Remover después de 7 segundos
+        setTimeout(() => {
+            if (errorDiv.parentElement) {
+                errorDiv.remove();
+            }
+        }, 7000);
+
+        // Scroll al mensaje
+        errorDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
 
     // Contador de caracteres para textarea
     const charCounter = document.createElement('div');

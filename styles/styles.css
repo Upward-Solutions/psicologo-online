@@ -511,6 +511,76 @@ footer {
     transform: none;
 }
 
+/* Estilos para notificaciones del formulario */
+.success-notification,
+.error-notification {
+    margin-bottom: 20px;
+    padding: 15px 20px;
+    border-radius: 8px;
+    animation: slideInFromTop 0.5s ease-out;
+}
+
+.success-notification {
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    color: #155724;
+}
+
+.error-notification {
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    color: #721c24;
+}
+
+.notification-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.success-icon {
+    background-color: #28a745;
+    color: white;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.error-icon {
+    background-color: #dc3545;
+    color: white;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.success-text,
+.error-text {
+    font-weight: 500;
+    flex: 1;
+}
+
+@keyframes slideInFromTop {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* Responsivo para Tablets */
 @media (max-width: 768px) {
     .banner {
