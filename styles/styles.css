@@ -318,8 +318,10 @@ footer {
     right: 20px;
     z-index: 9999;
     width: 60px;
-    height: 60px;
+    height: auto;
     display: flex;
+    flex-direction: column;
+    gap: 10px;
     justify-content: center;
     align-items: center;
     transition: transform 0.3s ease;
@@ -332,8 +334,16 @@ footer {
 
 .whatsapp-float a {
     width: 100%;
-    height: auto;
-    display: block;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+.whatsapp-float .ig-link i {
+    font-size: 34px;
+    color: #C13584;
 }
 
 .tooltip-text {
@@ -362,12 +372,8 @@ footer {
     opacity: 1;
 }
 
-.whatsapp-float:hover {
+.whatsapp-float a:hover {
     transform: scale(1.1);
-}
-
-.whatsapp-float.is-hidden {
-    display: none !important;
 }
 
 /* Estilos del formulario de contacto */
@@ -900,8 +906,10 @@ footer {
         right: 20px !important;
         z-index: 9999 !important;
         width: 60px;
-        height: 60px;
+        height: auto;
         display: flex;
+        flex-direction: column;
+        gap: 10px;
         justify-content: center;
         align-items: center;
     }
@@ -912,9 +920,11 @@ footer {
     }
 
     .whatsapp-float a {
-        display: block;
+        display: flex;
         width: 100%;
-        height: auto;
+        height: 60px;
+        justify-content: center;
+        align-items: center;
     }
 }
 

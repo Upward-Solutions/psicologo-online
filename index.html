@@ -49,6 +49,9 @@
        target="_blank" rel="noopener">
         <img src="./assets/whatsapp.png" alt="WhatsApp"/>
     </a>
+    <a href="https://www.instagram.com/webpsico" target="_blank" rel="noopener" class="ig-link" aria-label="Instagram">
+        <i class="fa-brands fa-instagram"></i>
+    </a>
 </div>
 
 
@@ -215,47 +218,11 @@
         </div>
     </div>
 </section>
-<div class="rrss-section">
-    <div class="container">
-        <h2 class="title" style="text-align: center; margin-bottom: 40px">Redes Sociales</h2>
-        <div class="rrss-container">
-                <a class="rrss-item" href="https://api.whatsapp.com/send?phone=5491138978104&text=Hola%2C%20Webpsico.com%20me%20gustar%C3%ADa%20comenzar%20un%20tratamiento" target="_blank" rel="noopener">
-                    <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
-                    <span class="rrss-text">+54 9 11 3897-8104</span>
-                </a>
-                <a class="rrss-item" href="https://instagram.com/webpsico" target="_blank" rel="noopener">
-                    <i class="fa-brands fa-instagram" aria-hidden="true"></i>
-                    <span class="rrss-text">@webpsico</span>
-                </a>
-                <a class="rrss-item" href="mailto:contacto@webpsico.com">
-                    <i class="fa-solid fa-envelope" aria-hidden="true"></i>
-                    <span class="rrss-text">contacto@webpsico.com</span>
-                </a>
-        </div>
-    </div>
-</div>
 <footer><p>Realizado por Upward Solutions ®</p></footer>
 <script src="scripts/timeline-section.js"></script>
 <script src="scripts/menu.js"></script>
 <script src="scripts/form-validation.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>AOS.init()</script>
-<script>
-(function(){
-  var float = document.querySelector('.whatsapp-float');
-  var section = document.querySelector('.rrss-section');
-  if (!float || !section || !('IntersectionObserver' in window)) return;
-  var observer = new IntersectionObserver(function(entries){
-    entries.forEach(function(entry){
-      if (entry.isIntersecting) {
-        float.classList.add('is-hidden');
-      } else {
-        float.classList.remove('is-hidden');
-      }
-    });
-  }, {root: null, threshold: 0});
-  observer.observe(section);
-})();
-</script>
 </body>
 </html>
