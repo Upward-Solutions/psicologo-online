@@ -156,42 +156,59 @@ document.addEventListener('DOMContentLoaded', function() {
             formData.append('correo', correoInput.value.trim());
             formData.append('consulta', consultaInput.value.trim());
 
-            // Enviar datos via AJAX
-            fetch('send-contact.php', {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    // Mostrar mensaje de éxito
-                    showSuccessMessage(data.message);
+            function doFetch() {
+                fetch('send-contact.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        // Mostrar mensaje de éxito
+                        showSuccessMessage(data.message);
 
-                    // Resetear formulario
-                    form.reset();
+                        // Resetear formulario
+                        form.reset();
 
-                    // Limpiar clases de éxito
-                    document.querySelectorAll('.success').forEach(input => {
-                        input.classList.remove('success');
-                    });
+                        // Limpiar clases de éxito
+                        document.querySelectorAll('.success').forEach(input => {
+                            input.classList.remove('success');
+                        });
 
-                    // Resetear contador de caracteres
-                    charCounter.textContent = '0/500';
-                    charCounter.classList.remove('warning');
-                } else {
-                    // Mostrar mensaje de error del servidor
-                    showErrorMessage(data.message);
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                showErrorMessage('Error de conexión. Por favor, verifica tu conexión a internet e intenta nuevamente.');
-            })
-            .finally(() => {
-                // Restaurar botón
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-            });
+                        // Resetear contador de caracteres
+                        charCounter.textContent = '0/500';
+                        charCounter.classList.remove('warning');
+                    } else {
+                        // Mostrar mensaje de error del servidor
+                        showErrorMessage(data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    showErrorMessage('Error de conexión. Por favor, verifica tu conexión a internet e intenta nuevamente.');
+                })
+                .finally(() => {
+                    // Restaurar botón
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                });
+            }
+
+            // Obtener token reCAPTCHA v3 si está disponible
+            if (window.grecaptcha && window.RECAPTCHA_SITE_KEY && window.RECAPTCHA_SITE_KEY !== 'RECAPTCHA_SITE_KEY') {
+                grecaptcha.ready(function() {
+                    grecaptcha.execute(window.RECAPTCHA_SITE_KEY, { action: 'contact' })
+                        .then(function(token) {
+                            formData.append('recaptcha_token', token);
+                            doFetch();
+                        })
+                        .catch(function() {
+                            doFetch();
+                        });
+                });
+            } else {
+                doFetch();
+            }
         } else {
             // Scroll al primer error
             const firstError = document.querySelector('.error');

@@ -12,8 +12,15 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
+// Autoload y variables de entorno
+require_once __DIR__ . '/vendor/autoload.php';
+if (class_exists('Dotenv\\Dotenv')) {
+    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+    $dotenv->safeLoad();
+}
+
 // Cargar configuración
-$config = require_once 'config/smtp-config.php';
+$config = require_once __DIR__ . '/config/smtp-config.php';
 
 // Función para limpiar datos de entrada
 function sanitizeInput($data) {
@@ -60,8 +67,7 @@ if (!empty($errors)) {
     exit;
 }
 
-// Cargar PHPMailer
-require_once 'vendor/autoload.php';
+// Cargar PHPMailer (autoload ya cargado arriba)
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
@@ -74,6 +80,7 @@ try {
     // Configuración del servidor SMTP
     if ($config['debug_mode']) {
         $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+        $mail->Debugoutput = static function ($str, $level) { error_log("SMTP $level: $str"); };
     }
 
     $mail->isSMTP();
@@ -83,6 +90,8 @@ try {
     $mail->Password = $config['smtp_password'];
     $mail->SMTPSecure = $config['smtp_encryption'];
     $mail->Port = $config['smtp_port'];
+    $mail->SMTPAutoTLS = true;
+    $mail->AuthType = 'LOGIN';
     $mail->CharSet = 'UTF-8';
 
     // Configurar remitente

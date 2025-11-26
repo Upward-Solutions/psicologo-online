@@ -302,16 +302,6 @@ body {
     transform: translateY(0);
 }
 
-footer {
-    width: 100%;
-    padding: 20px;
-    background-color: var(--color4);
-    color: #fff; /* Texto blanco */
-    text-align: center;
-    font-family: Arial, sans-serif;
-    font-size: 1rem;
-}
-
 .whatsapp-float {
     position: fixed;
     bottom: 20px;
