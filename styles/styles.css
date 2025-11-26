@@ -625,7 +625,7 @@ body {
 /* Responsivo para Tablets */
 @media (max-width: 768px) {
     .banner {
-        background-image: url('../assets/banner-mobile.png');
+        background-image: url('../assets/foto3.jpeg');
     }
 
     .navbar {
@@ -802,7 +802,7 @@ body {
 /* Responsivo para TV */
 @media (max-width: 1024px) {
     .banner {
-        background-image: url('../assets/banner-mobile.png');
+        background-image: url('../assets/foto3.jpeg');
     }
 
     .cards-container {
